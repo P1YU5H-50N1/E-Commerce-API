@@ -8,8 +8,8 @@ const {
 
 router.get("/list-of-sellers", getSellerList);
 
-router.get("/seller-catalog/:seller-id", getCatalog);
+router.get("/seller-catalog/:seller_id", getCatalog);
 
-router.post("/create-order/:seller-id", createOrder);
+router.post("/create-order/:seller_id", createOrder);
 
 module.exports = router;
