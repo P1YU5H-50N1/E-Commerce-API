@@ -4,10 +4,12 @@ const OrderItemSchema = mongoose.Schema(
 	{
 		seller_id: {
 			type: mongoose.Schema.Types.ObjectId,
+			required: true,
 			ref: "User",
 		},
 		order_id: {
 			type: mongoose.Schema.Types.ObjectId,
+			required: true,
 			ref: "Order",
 		},
 		quantity: {
