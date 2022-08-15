@@ -1,12 +1,14 @@
-const registerUser = (req,res)=>{
-    res.status(200).json({message:"User Registered"})
-}
+const asyncHandler = require("express-async-handler");
 
-const loginUser = (req,res) =>{
-    res.status(200).json({message:"User Logged in"})
-}
+const registerUser = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: "User Registered" });
+});
+
+const loginUser = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: "User Logged in" });
+});
 
 module.exports = {
-    registerUser,
-    loginUser
-}
+	registerUser,
+	loginUser,
+};
