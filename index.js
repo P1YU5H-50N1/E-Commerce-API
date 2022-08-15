@@ -4,7 +4,8 @@ const authRoutes = require('./routes/auth/authRoutes')
 const buyerRoutes = require('./routes/buyer/buyerRoutes')
 const sellerRoutes = require('./routes/seller/sellerRoutes')
 const connectDB = require('./config/db');
-const { connect } = require("./routes/seller/sellerRoutes");
+const { errorHandler } = require('./middleware/errorMiddleware');
+
 
 connectDB()
 
@@ -16,7 +17,7 @@ app.use(express.urlencoded({extended:false}))
 app.use('/api/auth',authRoutes)
 app.use('/api/buyer',buyerRoutes)
 app.use('/api/seller',sellerRoutes)
-
+app.use(errorHandler)
 
 const port = process.env.PORT || 5000
 
