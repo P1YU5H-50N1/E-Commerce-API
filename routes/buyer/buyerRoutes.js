@@ -8,7 +8,7 @@ const {
 const { protect } = require('../../middleware/authMiddleware')
 
 
-router.get("/list-of-sellers", getSellerList);
+router.get("/list-of-sellers",protect, getSellerList);
 
 router.get("/seller-catalog/:seller_id",protect, getCatalog);
 
