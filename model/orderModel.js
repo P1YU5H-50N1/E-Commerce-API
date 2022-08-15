@@ -7,6 +7,11 @@ const orderSchema = mongoose.Schema(
 			required: true,
 			ref: "User",
 		},
+		seller_id: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: "User",
+		},
 	},
 	{
 		timestamps: true,
