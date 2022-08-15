@@ -5,11 +5,13 @@ const {
 	getCatalog,
 	createOrder,
 } = require("../../controllers/buyerContollers");
+const { protect } = require('../middleware/authMiddleware')
 
-router.get("/list-of-sellers", getSellerList);
 
-router.get("/seller-catalog/:seller_id", getCatalog);
+router.get("/list-of-sellers",protect, getSellerList);
 
-router.post("/create-order/:seller_id", createOrder);
+router.get("/seller-catalog/:seller_id",protect, getCatalog);
+
+router.post("/create-order/:seller_id",protect, createOrder);
 
 module.exports = router;

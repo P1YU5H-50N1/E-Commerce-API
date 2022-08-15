@@ -4,9 +4,11 @@ const {
 	sellerOrders,
 	createCatalog,
 } = require("../../controllers/sellerControllers");
+const { protect } = require('../middleware/authMiddleware')
 
-router.get("/orders", sellerOrders);
 
-router.post("/create-catalog", createCatalog);
+router.get("/orders",protect, sellerOrders);
+
+router.post("/create-catalog",protect, createCatalog);
 
 module.exports = router;
