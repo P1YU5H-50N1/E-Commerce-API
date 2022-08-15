@@ -4,7 +4,7 @@ const {
 	sellerOrders,
 	createCatalog,
 } = require("../../controllers/sellerControllers");
-const { protect } = require('../middleware/authMiddleware')
+const { protect } = require('../../middleware/authMiddleware')
 
 
 router.get("/orders",protect, sellerOrders);
